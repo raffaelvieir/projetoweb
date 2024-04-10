@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/inicio', function (){
+    return view('site/inicio');
+});
+Route::any('/any', function (){
+    return "permite acesso http total";
+});
+Route::match(['get', 'post'], '/match', function(){
+    return "permite apenas acessos definidos";
+});
